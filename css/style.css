@@ -1,0 +1,1531 @@
+
+/* Обнуление стилей */
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* HEADER */
+header {
+    background-color: #ffffff;
+    border-bottom: 2px solid #e0e0e0;
+    padding: 10px 0px;
+}
+
+.container {
+    width: 100%; 
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+.btn {
+    background-color: #e0f7fa;
+    color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #b2ebf2;
+}
+
+/* стрелка */
+.materials-link::after {
+    content: '';
+    display: inline-block; /* элемент в потоке для выравнивания */
+    width: 14px;
+    height: 14px;
+    background: url('../img/arrow.svg') no-repeat center;
+    background-size: contain;
+    margin-right: 4px; /* Отступ между иконкой и текстом */
+    vertical-align: middle; 
+
+}
+
+/* выпадающее меню */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 8px 16px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Показать выпадающее меню при наведении */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+/* Подзаголовок "Главная > Блог" */
+.under_header {
+    margin: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.page-title {
+    margin: 20px;
+}
+
+.page-title h1 {
+    font-size: 48px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Категории */
+.category-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin: 20px;
+}
+
+.category {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.category:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Блоки контента */
+.content-blocks {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    margin: 20px;
+}
+
+.content-block {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.3s;
+    overflow: hidden;
+    width: calc(50% - 12px); /* Половина ширины контейнера с учетом зазора */
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    height: 499px; /* Задает фиксированную высоту */
+}
+
+.content-block:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-wrapper {
+    position: relative;
+}
+
+.content-image {
+    width: 100%;
+    object-fit: cover;
+    height: 260px;
+}
+.badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 6px 8px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 143%;
+    color: #333;
+    border: 1px solid #c1c5cd;
+}
+
+.badge::before {
+    content: '';
+    display: inline-block; /* элемент в потоке для выравнивания */
+    width: 20px;
+    height: 20px;
+    background: url('../img/horse.svg') no-repeat center;
+    background-size: contain;
+    margin-right: 4px; /* Отступ между иконкой и текстом */
+    vertical-align: middle;
+}
+
+.badge_under {
+    position: absolute;
+    top: 60px;
+    left: 16px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 6px 8px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 143%;
+    color: #333;
+    border: 1px solid #c1c5cd;
+} 
+
+.badge_under::before {
+    content: '';
+    display: inline-block; /* Оставляет элемент в потоке для выравнивания */
+    width: 20px;
+    height: 20px;
+    background: url('../img/horse.svg') no-repeat center;
+    background-size: contain;
+    margin-right: 4px; /* Отступ между иконкой и текстом */
+    vertical-align: middle;
+
+}
+
+
+.content-info {
+    padding: 16px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Распределяет пространство между элементами */
+    height: 100%; /* Растягивает контейнер на всю высоту */
+}
+
+.content-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 144%;
+}
+
+.content-author{
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 8px;
+    line-height: 144%;
+}
+
+
+.content-date {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 12px; 
+    letter-spacing: 0.02em;
+    color: #868686;
+    line-height: 0;  
+}
+
+
+.content-text {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 16px;
+    line-height: 143%;
+}
+
+
+/* Добавление 3 блоков  */
+.content-image_small {
+    width: 100%; 
+    height: auto; 
+    object-fit: cover; 
+}
+
+.content-blocks_small {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет блокам переноситься на новую строку, если не помещаются */
+    gap: 24px; /* Отступ между блоками */
+    margin: 20px;
+}
+
+.content-block_small {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.3s;
+    overflow: hidden;
+    width: calc(33.33% - 16px); /* Используем процентную ширину для адаптивности */
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.nowrap {
+    white-space: nowrap;
+}
+.content-block_small:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Кнопка ещё */
+
+.main_button {
+    margin: 0 auto;
+    margin-top: 56px;
+    margin-bottom: 96px;
+    display: flex;
+    width: 182px;
+    padding: 12px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+    background: #35B3A9;
+    border: none;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Montserrat-Bold', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.main_button:hover {
+    background-color: #E3F5F5;
+    color: #03B2A5;
+}
+
+/* footer(подвал) */
+.footer {
+    padding-top: 40px;
+    background: #2963A3;
+}
+
+.footer_top {
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 24px; /* Добавлено для симметричных отступов слева и справа */
+}
+
+.footer_left {
+    margin-right: 60px;
+    display: flex;
+    gap: 93px;   
+}
+
+.footer_menu {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 111px;
+}
+
+.footer_link {
+    font-family: 'Montserrat-Bold', sans-serif;
+    font-size: 16px;
+    color: #FFF;
+    text-decoration: none;
+    line-height: 24px;
+}
+
+.footer_header {
+    display: flex;
+    width: 486px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.footer_header-title {
+    font-family: 'Montserrat-Bold', sans-serif;
+    color: #FFF;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.footer_form {
+    position: relative;
+    width: 100%; /* Добавлено для адаптивности */
+    transition: transform 0.3s ease;
+}
+
+.footer_form:focus-within {
+    transform: scale(1.05); /* Увеличение формы при фокусе на любом элементе внутри */
+}
+
+.footer_input {
+    font-family: 'Montserrat-Regular', sans-serif;
+    width: 100%; 
+    padding: 14px 0 14px 16px;
+    color: #414141;
+    border-radius: 4px;
+    line-height: 20px;
+    border: none; 
+}
+
+.footer_button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    padding: 14px 20px;
+    height: 48px;
+    fill: none;
+    border-radius: 4px;
+    background: #16C8BB;
+    border: none;
+    cursor: pointer; /* Добавлено, чтобы указатель мыши был "pointer" */
+}
+
+.footer_header-text {
+    font-family: 'Montserrat-Regular', sans-serif;
+    color: #FFF;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.25px;
+}
+
+.footer_right {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.footer_social {
+    display: flex;
+    gap: 16px;
+}
+
+.footer_social-network {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px; 
+    border-radius: 50%; 
+    border: none;
+    background: #EFF5FB;
+    cursor: pointer;
+}
+
+.footer_copy {
+    margin: 0 auto;
+    max-width: 1200px;
+    margin-top: 24px;
+    border-top: 1px solid rgba(139, 139, 145, 0.3);
+    padding: 0 24px; /* Добавлено для симметричных отступов */
+}
+
+.footer_copy-bottom {
+    padding: 16px 0 17px 0;
+    display: flex;
+    gap: 48px;
+    justify-content: space-between; /* Добавлено для равного распределения текста */
+    flex-wrap: wrap; /* Добавлено для корректного отображения на маленьких экранах */
+}
+
+.footer_copy-text {
+    font-family: 'Montserrat-Regular', sans-serif;
+    color: #FFF;
+    font-size: 14px;
+    opacity: 0.7;
+    text-decoration: none;
+}
+
+
+/* Статья */
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container_article {
+    width: 690px;
+}
+
+.content {
+    margin-top: 24px;
+    width: 588px;
+    margin-left: 24px;
+} 
+
+.content_flex {
+    width: 690px;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.text-2 {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Montserrat-Medium', sans-serif;
+}
+
+.article_title {
+    margin-top: 54px;
+    font-family: 'Montserrat-Bold', sans-serif;
+    font-size: 48px;
+    line-height: 56px;
+}
+
+.article_list {
+    margin: 16px 0 24px 0;
+    display: flex;
+    gap: 8px;
+    list-style: none;
+}
+
+.article_item {
+    color: #494949;
+    font-size: 14px;
+    font-family: 'Montserrat-Regular', sans-serif;
+}
+
+.article_heading-1-title {
+    font-family: 'Montserrat-Bold', sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+
+.article_heading-1-list {
+    margin-top: 16px;
+}
+
+.article_heading-1-item {
+    text-decoration: underline;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Montserrat-Medium', sans-serif;
+    text-decoration-skip-ink: none;
+}
+
+.article_heading-1-item--no-mark {
+    margin-left: 20px;
+    margin-top: 4px;
+}
+
+.article_heading-1-item::marker {
+    color: #03B2A5;
+    font-size: 24px;
+}
+
+.article_heading-1-item:last-child {
+    margin-top: 14px;
+}
+
+.article_heading-1-item:nth-child(3) {
+    margin-top: 8px;
+}
+
+.article_heading-2 {
+    width: 690px;
+    margin-top: 24px;
+}
+
+.article_heading-2-title {
+    font-size: 24px;
+    font-family: 'Montserrat-Bold', sans-serif;
+}
+
+.article_heading-2-text {
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Montserrat-Medium', sans-serif;
+}
+
+.article_quote {
+    position: relative;
+    padding: 24px;
+    margin-top: 40px;
+    width: 690px;
+    background-color: #F3F7FE;
+}
+
+.article_quote-text {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Montserrat-italic', sans-serif;
+}
+
+.article_quote-image {
+    position: absolute;
+    top: 24px;
+}
+
+.article_quote-author {
+    margin-top: 8px;
+    font-size: 16px;
+    font-family: 'Montserrat-Bold', sans-serif;
+}
+
+.article_heading-3-title {
+    font-size: 24px;
+    font-family: 'Montserrat-Bold', sans-serif;
+}
+
+.article_heading-3-list {
+    margin-top: 16px;
+}
+
+.article_heading-3-item {
+    margin-left: 24px;
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333;
+    font-family: 'Montserrat-Medium', sans-serif;
+}
+
+.article_heading-3-item::marker {
+    color: #03B2A5;
+    font-size: 24px;
+}
+
+.article_heading-3-item:last-child {
+    margin-top: 16px;
+}
+
+.article_heading-3-image-subtext {
+    margin-top: 16px;
+    color: #868686;
+    font-size: 14px;
+    font-family: 'Montserrat-Regular', sans-serif;
+}
+
+.article_heading-3-quote {
+    position: relative;
+    padding: 24px 104px 48px 102px;
+    text-align: center;
+}
+
+.article_heading-3-quote-text {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Montserrat-italic', sans-serif;
+}
+
+.article_heading-3-quote-image {
+    position: absolute;
+    top: 0;
+    left: 220px;
+    z-index: -1;
+}
+
+.article_heading-3-vector  {
+    position: absolute;
+    right: 0;
+}
+
+.article_heading-3-women {
+    display: flex;
+    gap: 24px;
+}
+
+.article_heading-3-women-text {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'Montserrat-Medium', sans-serif;
+}
+
+.article_heading-3-exercise {
+    padding: 24px;
+    background-color: #FEFAEC;
+}
+
+.exercise {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-family: 'Montserrat-Bold', sans-serif;
+}
+
+.article_heading-4-flex {
+    display: flex;
+    gap: 24px;
+}
+
+.article_heading-4-image-subtext {
+    margin-top: 16px;
+    color: #868686;
+    font-size: 14px;
+    font-family: 'Montserrat-Regular', sans-serif;
+}
+
+.article_heading-4-flex-image {
+    margin-bottom: 24px;
+}
+
+.article_heading-4-lightning {
+    margin: 0 auto;
+}
+
+.background {
+    padding: 24px;
+    background: rgba(3, 178, 165, 0.10);
+}
+
+.article_heading-4-item {
+    display: inline;
+    margin-right: 8px;
+    color: #2963A3;
+    font-family: 'Montserrat-Regular', sans-serif;
+    line-height: 20px;
+    list-style: none;
+}
+
+.article_click {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1200px;
+    margin-top: 48px;
+}
+
+.article_border {
+    width: 1200px;
+    position: absolute;
+    border-top: 1px solid #DEDEDE;
+}
+
+.article_click-problem {
+    display: block;
+    margin: 0;
+    margin-top: 72px;
+    width: 348px;
+    border: 0;
+}
+
+.article_click-title {
+    font-size: 48px;
+    line-height: 56px;
+    font-family: 'Montserrat-Bold', sans-serif;
+}
+
+.article_click-text {
+    margin-top: 24px;
+    font-size: 18px;
+    font-family: 'Montserrat-Regular', sans-serif;
+}
+
+.article_click-button {
+    margin-top: 32px;
+    padding: 20px 24px;
+    background-color: #16C8BB;
+    font-size: 16px;
+    color: #FFF;
+    font-family: 'Montserrat-Bold', sans-serif;
+    cursor: pointer;
+}
+
+.article_click-button:hover {
+    background-color: #E3F5F5;
+    color: #03B2A5;
+}
+
+.article_click-image {
+    position: absolute;
+    right: 0;
+}
+
+.article_click-image_talking {
+    margin-left: 223px;
+}
+
+
+
+.article_background-bottom img{
+    width: 100%;
+    height: 82px;
+    margin-top: 26px;
+}
+
+/* Дополнительный боковой контент */
+.sidebar_qlick {
+    margin-top: 88px;
+    padding: 24px;
+    width: 282px;
+    background-color: #E6F0FD;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.sidebar_qlick-inside {
+    width: 100%;
+    padding: 24px 0 24px 0;
+    text-align: center;
+}
+
+.sidebar_qlick-title{
+    font-family: 'Montserrat-Bold', sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.sidebar_qlick-text {
+    margin-top: 8px;
+    font-family: 'Montserrat-Regular', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.sidebar_qlick-button {
+    width: 100%;
+    font-family: 'Montserrat-Bold', sans-serif;
+    padding: 12px 16px;
+    border-radius: 4px;
+    background: #35B3A9;
+    color: #FFF;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+.sidebar_qlick-button:hover {
+    background-color: #E3F5F5;
+    color: #03B2A5;
+
+}
+
+.sidebar_autobiography { 
+    margin-top: 24px;
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid #DEDEDE;
+}
+
+.sidebar_autobiography-inner {
+    position: relative;
+}
+
+.sidebar_correspondence {
+    top: 0;
+    position: absolute;
+    width: 105px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    padding: 0px 6px;
+    gap: 4px;
+    border-radius: 6px;
+    background: rgba(243, 244, 248, 0.70);
+}
+
+.sidebar_correspondence-text .sidebar_video-text {
+    font-size: 12px;
+    font-family: 'Montserrat-Medium', sans-serif;
+}
+
+.sidebar_video {
+    position: absolute;
+    width: 74px;
+    height: 24px;
+    top: 32px;
+    display: flex;
+    padding: 0px 6px;
+    align-items: center;
+    gap: 4px;
+    border-radius: 6px;
+    background: rgba(243, 244, 248, 0.70);
+}
+
+.sidebar_profile {
+    text-align: center;
+}
+
+.sidebar_profile-avatar {
+    margin-left: 65px;
+    margin-top: 8px;
+}
+
+.sidebar_profile-name {
+    margin-top: 16px;
+    font-size: 20px;
+    font-family: 'Montserrat-Bold', sans-serif;
+}
+
+.sidebar_profile-profession {
+    font-size: 16px;
+    font-family: 'Montserrat-SemiBold', sans-serif;
+}
+
+.sidebar_profile-experience {
+    margin-top: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.sidebar_profile-experience-item {
+    list-style: none;
+    color: #A2A7B1;
+    font-size: 14px;
+    font-family: 'Montserrat-Medium', sans-serif;
+}
+
+.sidebar_duties {
+    margin-top: 16px;
+    border-top: 1px solid #DEDEDE;
+}
+
+.sidebar_duties-title {
+    margin-top: 16px;
+    font-size: 16px;
+    font-family: 'Montserrat-Bold', sans-serif;
+}
+
+.sidebar_duties-item {
+    margin-left: 20px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-family: 'Montserrat-Regular', sans-serif;
+}
+
+.sidebar_duties-item::marker {
+    color: #03B2A5;
+    font-size: 20px;
+}
+
+.sidebar_duties-button {
+    margin-top: 16px;
+    width: 100%;
+    font-family: 'Montserrat-Bold', sans-serif;
+    padding: 12px 16px;
+    border-radius: 4px;
+    background: #35B3A9;
+    color: #FFF;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.sidebar_duties-button:hover {
+    background-color: #E3F5F5;
+    color: #03B2A5;
+}
+
+
+
+.sidebar_care {
+    margin-top: 28px;
+}
+
+.sidebar_session {
+    position: relative;
+    width: 282px;
+    margin-top: 42px;
+    padding: 32px;
+    border-radius: 24px;
+    border: 1px solid #DEDEDE;
+}
+
+.sidebar_session-inside {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sidebar_session-title {
+    color: #2963A3;
+    font-size: 18px;
+    font-family: 'Montserrat-Bold', sans-serif;
+}
+
+.sidebar_session-text {
+    color: #011632;
+    font-size: 14px;
+    font-family: 'OpenSans-Regular', sans-serif;
+    line-height: 20px;
+}
+
+.sidebar_session-price {
+    font-size: 24px;
+    font-family: 'Montserrat-Bold', sans-serif;
+}
+
+.sidebar_session-button {
+    width: 108px; 
+    height: 48px; 
+    padding: 16px 0 16px 0; 
+    position: relative;
+    z-index: 2;
+    border-radius: 4px;
+    background: #35B3A9;
+    color: #FFF;
+    font-size: 16px;
+    font-family: 'Montserrat-Bold', sans-serif;
+    cursor: pointer;
+}
+
+
+.sidebar_session-button:hover {
+    background-color: #E3F5F5;
+    color: #03B2A5
+}
+
+
+
+.sidebar_session-image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+/* Адаптив */
+
+@media screen and (max-width: 1024px) {
+
+
+    .container {
+        width: 90%; /* Вернули ширину 90% */
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column; /* Ставим элементы один под другим */
+        align-items: flex-start; /* Выравниваем по левому краю */
+    }
+
+    .logo {
+        margin-bottom: 10px; /* Добавляем отступ после логотипа */
+    }
+
+    .menu_list {
+        width: 100%;
+        display: flex;
+        flex-direction: column; /* Меню в столбик */
+        gap: 10px;
+    }
+
+    .menu_list a {
+        padding: 10px 0; /* Увеличиваем кликабельную область */
+        font-size: 16px; /* Уменьшаем размер шрифта для экономии места */
+    }
+
+
+    .category-header {
+        flex-wrap: wrap;
+        margin: 25px;
+        padding: 25px;
+    }
+
+    .content-blocks {
+        display: flex;
+        gap: 20px; /* Расстояние между карточками */
+        justify-content: space-between;
+        flex-direction: column;
+        margin: 0px;
+        padding: 20px;
+    }
+    
+    .content-block {        
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 90%;
+        height: 90%;     
+    }
+
+    .content-blocks_small {
+        display: flex;
+        gap: 20px; /* Расстояние между карточками */
+        justify-content: space-between;
+        flex-direction: column;
+        margin: 0px;
+        padding: 20px;
+    }
+
+    .content-block_small {        
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 90%;
+        height: 90%; 
+        
+    }
+
+    .footer_top {
+        margin-right: 50px;
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 0px 0px 0px; /* Добавлено для симметричных отступов слева и справа */
+    }
+
+    .footer_menu {
+        margin-left: 10px;
+    }
+
+    .footer_form {
+        margin-left: -20px;
+    }
+    
+    .footer_copy {
+        width: 100%; 
+        padding: 20px 20px; /* Внутренние отступы сверху и снизу */
+        box-sizing: border-box; /* Учитываем отступы и границы в ширине */
+        text-align: center; /* Центрирование текста */
+    }
+    
+    .footer_copy-bottom {
+        display: flex; 
+        flex-wrap: wrap; 
+        justify-content: center; /* Центрирование элементов по горизонтали */
+        gap: 20px; /* Расстояние между элементами */
+        align-items: center; /* Вертикальное выравнивание элементов по центру */
+        margin: auto;
+    }
+
+    /* статья */
+    .wrapper {
+        max-width: 960px;
+    }
+    .container_article {
+        width: 714px;
+    }
+    .article_heading-1-item--no-mark {
+        display: none;
+    }
+    .article_heading-1-item:nth-child(2) {
+        display: none;
+    }
+    .article_heading-1-item:nth-child(3) {
+        display: none;
+    }
+    .article_click {
+        display: none;
+    }
+    .article_background-bottom {
+        display: none;
+    }
+    .article_heading-4-list {
+        display: none;
+    }
+    .article_heading-3-vector {
+        display: none;
+    }
+    .sidebar {
+        margin-left: 24px;
+    }
+    .sidebar_qlick {
+        width: 222px;
+    }
+    .stack_qlick-image {
+        width: 181px;
+    }
+    .sidebar_autobiography {
+        width: 222px;
+    }
+    .sidebar_duties {
+        width: 174px;
+    }
+    .sidebar_care-image {
+        width: 222px;
+    }
+    .sidebar_session {
+        width: 222px;
+    }
+    .sidebar_session {
+        padding: 24px;
+    }
+    .sidebar_session-image {
+        width: 220px;
+    }
+    .content_flex {
+        margin-bottom: 71px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+    .container {
+        max-width: 728px;
+    }
+
+    .footer {
+        padding: 35px 20px 23px 20px;
+    }
+    .footer_top {
+        max-width: 768px;
+        flex-wrap: wrap;
+    }
+    .footer_header {
+        width: 450px;
+    }
+    .footer_left {
+        gap: 30px;
+    }
+
+    .footer_form { 
+        padding: 20px;
+    }
+
+    .footer_button {
+        position: relative;
+        left: 348px;
+        top: -48px
+    }
+
+    .footer_right {
+        margin-top: 26px;
+    }
+
+    /* статья */
+
+    .wrapper {
+        max-width: 728px;
+        flex-direction: column;
+    }
+    .content_flex {
+        width: 728px;
+    }
+    .article_heading-2 {
+        width: 728px;
+    }
+    .article_quote {
+        width: 728px;
+    }
+    .content_flex {
+        margin-bottom: 23px;
+    }
+    .sidebar {
+        margin-left: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    .sidebar_qlick {
+        margin-top: 0;
+        width: 356px;
+        height: 481px;
+    }
+    .stack_qlick-image {
+        width: 257px;
+    }
+    .sidebar_qlick-title {
+        margin: 0 auto;
+        width: 200px;
+    }
+    .sidebar_autobiography {
+        margin-top: 0;
+        width: 355px;
+        height: 481px;
+    }
+    .sidebar_profile-avatar {
+        margin-left: 100px;
+    }
+    .sidebar_profile {
+        margin-bottom: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+    .sidebar_duties {
+        margin: 0 auto;
+        width: 250px;
+        height: 112px;
+    }
+    .sidebar_care {
+        margin-bottom: 59px;
+        margin-top: 36px;
+    }
+    .sidebar_care-image {
+        width: 356px;
+        height: 242px;
+    }
+    .sidebar_session {
+        padding: 24px 43px 0 22px;
+        margin-bottom: 59px;
+        margin-top: 36px;
+        width: 356px;
+        height: 248px;
+    }
+    .sidebar_session-image {
+        right: 15%;
+        width: 300px;
+    }
+
+
+}
+
+@media screen and (max-width: 414px) {
+    /* 1 часть */
+    .container {
+        max-width: 374px;
+    }
+    .footer {
+        padding: 35px 20px 35px 19px;
+    }
+    .footer_top {
+        flex-direction: column;
+        gap: 23px;
+    }
+    .footer_left {
+        gap: 145px;
+    }
+
+
+    .footer_link {
+        width: 111px;
+    }
+    .footer_header {
+        width: 375px;
+    }
+
+    .footer_button {
+        display: none ;
+    }
+    
+    .footer_right {
+        width: 374px;
+    }
+    .footer_copy-bottom {
+        flex-direction: column;
+        gap: 23px;
+    }
+    .footer_social {
+        gap: 20px;
+    }
+
+    /* 2 часть */
+    .wrapper {
+        width: 374px;
+    }
+    .content {
+        width: 342px;
+    }
+    .container_article {
+        width: 374px;
+    }
+    .content_flex {
+        width: 374px;
+        margin-bottom: 0;
+    }
+    .article_title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    .article_heading-1-item {
+        width: 342px;
+    }
+    .article_heading-4-flex {
+        flex-direction: column;
+    }
+    .article_heading-3-women {
+        flex-direction: column;
+    }
+    .article_image {
+        width: 374px;
+    }
+    .article_heading-2 {
+        width: 374px;
+    }
+    .article_quote {
+        width: 374px;
+    }
+    .article_heading-3-image {
+        width: 374px;
+    }
+    .article_heading-3-quote-text {
+        width: 374px;
+    }
+    .article_heading-3-quote {
+        padding: 0;
+    }
+    .article_heading-3-quote-image {
+        left: 15%;
+      }
+    .sidebar_qlick {
+        width: 374px;
+    }
+    .sidebar_autobiography {
+        width: 374px;
+    }
+    .sidebar_profile-avatar {
+        margin-left: 110px;
+    }
+    .sidebar_care {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .sidebar_care-image {
+        width: 374px;
+        height: 292px;
+    }
+    .sidebar_session {
+        width: 374px;
+        margin-bottom: 121px;
+        margin-top: 0;
+    }
+    .breadcrumb_list {
+        overflow: hidden;
+        flex-wrap: nowrap;
+        height: 18px;
+        text-wrap: nowrap;
+        
+    }
+    .breadcrumb_item:nth-child(3){
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        text-wrap: nowrap;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    /* 1 часть */
+    .container {
+        max-width: 288px;
+    }
+    
+    .category-header {
+        flex-direction: column;
+
+    }
+
+    .badge_under {
+        margin: 20px;
+        left: auto;
+    }
+
+    .footer {
+        padding: 35px 14px 35px 18px;
+    }
+    .footer_top {
+        gap: 0;
+    }
+    .footer_left {
+        gap: 73px;
+    }
+    .footer_button{
+        display: none;
+    }
+    
+    .footer_header {
+        margin-top: 23px;
+        width: 288px;
+    }
+    .footer_input {
+        width: 288px;
+    }
+    .footer_right {
+        width: 221px;
+    }
+
+    /* 2 часть */
+    .wrapper {
+        width: 288px;
+    }
+    .content {
+        width: 256px;
+    }
+    .container_article {
+        width: 288px;
+    }
+    .content_flex {
+        width: 288px;
+    }
+    .article_title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    .article_image {
+        width: 288px;
+    }
+    .article_heading-1-item {
+        width: 256px;
+    }
+    .article_heading-2 {
+        width: 288px;
+    }
+    .article_quote {
+        width: 288px;
+    }
+    .article_heading-3-image {
+        width: 288px;
+    }
+    .article_heading-3-quote-text {
+        width: 288px;
+    }
+    .article_heading-4-flex-image {
+        width: 288px;
+    }
+    .article_heading-4-flex-image-2 {
+        width: 288px;
+    }
+    .sidebar_qlick {
+        width: 288px;
+        height: 512px;
+    }
+    .sidebar_autobiography {
+        width: 288px;
+        height: 481px;
+    }
+    .sidebar_care-image {
+        width: 288px;
+    }
+    .sidebar_session {
+        height: 252px;
+        margin-bottom: 60px;
+    }
+    .sidebar_session-image {
+        right: 5%;
+    }
+    .sidebar_profile-avatar {
+        margin-left: 70px;
+    }
+}
